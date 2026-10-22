@@ -1,62 +1,64 @@
-export const perguntas = [
-  {
-    enunciado:
-      "Durante uma observação noturna com a turma, seu grupo decide debater por que Plutão deixou de ser classificado como um planeta principal e passou a ser considerado um planeta anão em 2006. Um colega se irrita, dizendo que isso é \"invenção da ciência\" e exige que o grupo apresente Plutão como o nono planeta tradicional no trabalho.",
-    alternativas: [
-      {
-        texto: "Não saberia lidar",
-        afirmacao: [
-          "Fico irritado com a teimosia do colega, discuto afirmando que ele está desatualizado e me recuso a conversar até que ele aceite as regras da União Astronômica Internacional.",
-          "Você se sente frustrado porque a recusa em aceitar definições científicas gera um impasse no grupo, fazendo o conflito se sobressair sobre o aprendizado."
-        ]
-      },
-      {
-        texto: "Saberia lidar",
-        afirmacao: [
-          "Explico que a classificação mudou porque descobrimos novos objetos no Cinturão de Kuiper semelhantes a Plutão, propondo que ele apresente o histórico da descoberta enquanto o grupo explica os critérios astronômicos atuais.",
-          "Você se sente seguro porque entende que a ciência evolui com novas descobertas e que compreender a história por trás das mudanças enrich o conhecimento de todos."
-        ]
-      }
-    ]
-  },
-  {
-    enunciado:
-      "Sua escola organiza uma feira de ciências e seu grupo quer montar uma maquete do Sistema Solar em escala real de tamanho e distância. O coordenador do evento proíbe o projeto na véspera, alegando que ocupará muito espaço no pátio e que as pessoas vão achar as distâncias \"vazias demais\", sugerindo uma maquete tradicional e desproporcional.",
-    alternativas: [
-      {
-        texto: "Não saberia lidar",
-        afirmacao: [
-          "Aceito a decisão para evitar atritos, reduzindo os planetas a tamanhos arbitrários e irreais apenas para entregar a tarefa rápida.",
-          "Você se sente desconfortável por replicar uma ideia incorreta sobre o espaço, mas prefere a omissão para não ter que negociar com a coordenação."
-        ]
-      },
-      {
-        texto: "Saberia lidar",
-        afirmacao: [
-          "Apresento uma proposta adaptada à direção, utilizando um corredor longo ou recursos visuais/digitais para demonstrar a vastidão do espaço sem atrapalhar a circulação, destacando o valor didático das proporções reais.",
-          "Você se sente motivado porque encontra uma solução criativa para manter a precisão científica sem comprometer a organização do evento."
-        ]
-      }
-    ]
-  },
-  {
-    enunciado:
-      "Em um debate sobre a exploração espacial, um colega questiona os investimentos em telescópios e missões para Marte, alegando nas redes sociais que isso é \"desperdício de dinheiro\" e que a humanidade deveria focar apenas nos problemas da Terra.",
-    alternativas: [
-      {
-        texto: "Não saberia lidar",
-        afirmacao: [
-          "Fico constrangido de defender a astronomia publicamente e me afasto da discussão, achando que não vale a pena discutir com quem não consome ciência.",
-          "Você se sente distante e desmotivado por achar que o conhecimento astronômico não consegue dialogar com as preocupações cotidianas das pessoas."
-        ]
-      },
-      {
-        texto: "Saberia lidar",
-        afirmacao: [
-          "Converso sobre como a tecnologia espacial gera avanços diretos na Terra — como painéis solares, purificação de água e imagens médicas — além de expandir nossa compreensão sobre o clima e a origem do planeta.",
-          "Você se sente empático e construtivo, mostrando que a busca por entender o universo e a melhoria da vida na Terra são objetivos que se complementam."
-        ]
-      }
-    ]
-  }
-];
+:root{
+    --cor-fundo: #053504;
+    --cor-principal: #0B0D20 ;
+    --cor-secundaria: #f2e318;
+    --cor-destaque: #5a0544;
+    --cor-texto: #D7F9FF;
+}
+
+body {
+background-color: var(--cor-fundo);
+color: var(--cor-texto);
+font-family: 'Inter', sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+
+.caixa-principal{
+    background-color: var(--cor-principal);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+}
+
+h1{
+    color: var(--cor-destaque);
+}
+
+h1, .caixa-perguntas, .caixa-resultado{
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+button{
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    transition: background-color 0.3s;
+}
+
+button:hover{
+    background-color: var(--cor-destaque);
+    color: var(--cor-principal);
+}
+
+.caixa-resultado{
+    display: none;
+}
+
+.caixa-resultado.mostrar{
+    display: block;
+}
+
+
+
+.caixa-alternativas{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
