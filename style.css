@@ -1,113 +1,62 @@
-/* ==========================================================================
-   Variáveis Globais de Cores - Tons Pastéis de Rosa e Vermelho
-   ========================================================================== */
-:root {
-  --cor-fundo: #ffe5ec;            /* Rosa bem claro suave */
-  --cor-card: #ffffff;             /* Fundo dos cards de perguntas */
-  --cor-borda: #ffc2d1;            /* Rosa pastel intermediário */
-  --cor-texto-principal: #4a2830;  /* Vinho escuro (alto contraste para leitura) */
-  --cor-texto-suave: #8b5d67;      /* Tom secundário para textos auxiliares */
-  --cor-botao: #ffb3c6;            /* Rosa/vermelho pastel base */
-  --cor-botao-hover: #ff8fab;      /* Vermelho pastel mais vivo */
-  --cor-botao-texto: #3f1d24;      /* Texto dos botões */
-  --cor-destaque: #fb6f92;         /* Tom de acentuação */
-}
-
-/* ==========================================================================
-   Estilos Gerais
-   ========================================================================== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto-principal);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-.container {
-  width: 100%;
-  max-width: 650px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* ==========================================================================
-   Card da Pergunta
-   ========================================================================== */
-.card-pergunta {
-  background-color: var(--cor-card);
-  border: 2px solid var(--cor-borda);
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 8px 20px rgba(251, 111, 146, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card-pergunta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(251, 111, 146, 0.18);
-}
-
-.enunciado {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  color: var(--cor-texto-principal);
-  margin-bottom: 24px;
-  font-weight: 500;
-}
-
-/* ==========================================================================
-   Botões de Alternativa
-   ========================================================================== */
-.container-alternativas {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.botao-alternativa {
-  background-color: var(--cor-botao);
-  color: var(--cor-botao-texto);
-  border: none;
-  border-radius: 12px;
-  padding: 14px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: left;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.botao-alternativa:hover {
-  background-color: var(--cor-botao-hover);
-  color: #ffffff;
-  transform: scale(1.01);
-}
-
-.botao-alternativa:active {
-  transform: scale(0.99);
-}
-
-/* ==========================================================================
-   Caixa de Afirmação / Resultado
-   ========================================================================== */
-.afirmacao {
-  margin-top: 16px;
-  padding: 16px;
-  background-color: var(--cor-fundo);
-  border-left: 4px solid var(--cor-destaque);
-  border-radius: 8px;
-  font-size: 0.95rem;
-  color: var(--cor-texto-suave);
-  line-height: 1.5;
-}
+export const perguntas = [
+  {
+    enunciado:
+      "Durante uma observação noturna com a turma, seu grupo decide debater por que Plutão deixou de ser classificado como um planeta principal e passou a ser considerado um planeta anão em 2006. Um colega se irrita, dizendo que isso é \"invenção da ciência\" e exige que o grupo apresente Plutão como o nono planeta tradicional no trabalho.",
+    alternativas: [
+      {
+        texto: "Não saberia lidar",
+        afirmacao: [
+          "Fico irritado com a teimosia do colega, discuto afirmando que ele está desatualizado e me recuso a conversar até que ele aceite as regras da União Astronômica Internacional.",
+          "Você se sente frustrado porque a recusa em aceitar definições científicas gera um impasse no grupo, fazendo o conflito se sobressair sobre o aprendizado."
+        ]
+      },
+      {
+        texto: "Saberia lidar",
+        afirmacao: [
+          "Explico que a classificação mudou porque descobrimos novos objetos no Cinturão de Kuiper semelhantes a Plutão, propondo que ele apresente o histórico da descoberta enquanto o grupo explica os critérios astronômicos atuais.",
+          "Você se sente seguro porque entende que a ciência evolui com novas descobertas e que compreender a história por trás das mudanças enrich o conhecimento de todos."
+        ]
+      }
+    ]
+  },
+  {
+    enunciado:
+      "Sua escola organiza uma feira de ciências e seu grupo quer montar uma maquete do Sistema Solar em escala real de tamanho e distância. O coordenador do evento proíbe o projeto na véspera, alegando que ocupará muito espaço no pátio e que as pessoas vão achar as distâncias \"vazias demais\", sugerindo uma maquete tradicional e desproporcional.",
+    alternativas: [
+      {
+        texto: "Não saberia lidar",
+        afirmacao: [
+          "Aceito a decisão para evitar atritos, reduzindo os planetas a tamanhos arbitrários e irreais apenas para entregar a tarefa rápida.",
+          "Você se sente desconfortável por replicar uma ideia incorreta sobre o espaço, mas prefere a omissão para não ter que negociar com a coordenação."
+        ]
+      },
+      {
+        texto: "Saberia lidar",
+        afirmacao: [
+          "Apresento uma proposta adaptada à direção, utilizando um corredor longo ou recursos visuais/digitais para demonstrar a vastidão do espaço sem atrapalhar a circulação, destacando o valor didático das proporções reais.",
+          "Você se sente motivado porque encontra uma solução criativa para manter a precisão científica sem comprometer a organização do evento."
+        ]
+      }
+    ]
+  },
+  {
+    enunciado:
+      "Em um debate sobre a exploração espacial, um colega questiona os investimentos em telescópios e missões para Marte, alegando nas redes sociais que isso é \"desperdício de dinheiro\" e que a humanidade deveria focar apenas nos problemas da Terra.",
+    alternativas: [
+      {
+        texto: "Não saberia lidar",
+        afirmacao: [
+          "Fico constrangido de defender a astronomia publicamente e me afasto da discussão, achando que não vale a pena discutir com quem não consome ciência.",
+          "Você se sente distante e desmotivado por achar que o conhecimento astronômico não consegue dialogar com as preocupações cotidianas das pessoas."
+        ]
+      },
+      {
+        texto: "Saberia lidar",
+        afirmacao: [
+          "Converso sobre como a tecnologia espacial gera avanços diretos na Terra — como painéis solares, purificação de água e imagens médicas — além de expandir nossa compreensão sobre o clima e a origem do planeta.",
+          "Você se sente empático e construtivo, mostrando que a busca por entender o universo e a melhoria da vida na Terra são objetivos que se complementam."
+        ]
+      }
+    ]
+  }
+];
