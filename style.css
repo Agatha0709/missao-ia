@@ -1,43 +1,113 @@
-:root{
-    --cor-fundo: #01080E ;
-    --cor-principal: #0B0D20 ;
-    --cor-secundaria: #212333; 
-    --cor-destaque: #2BDEFD;
-    --cor-texto: #D7F9FF;
+/* ==========================================================================
+   Variáveis Globais de Cores - Tons Pastéis de Rosa e Vermelho
+   ========================================================================== */
+:root {
+  --cor-fundo: #ffe5ec;            /* Rosa bem claro suave */
+  --cor-card: #ffffff;             /* Fundo dos cards de perguntas */
+  --cor-borda: #ffc2d1;            /* Rosa pastel intermediário */
+  --cor-texto-principal: #4a2830;  /* Vinho escuro (alto contraste para leitura) */
+  --cor-texto-suave: #8b5d67;      /* Tom secundário para textos auxiliares */
+  --cor-botao: #ffb3c6;            /* Rosa/vermelho pastel base */
+  --cor-botao-hover: #ff8fab;      /* Vermelho pastel mais vivo */
+  --cor-botao-texto: #3f1d24;      /* Texto dos botões */
+  --cor-destaque: #fb6f92;         /* Tom de acentuação */
+}
 
+/* ==========================================================================
+   Estilos Gerais
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.caixa-principal{
-    background-color: var(--cor-principal);
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    padding: 20px;
+.container {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-h1{
-    color: var(--cor-destaque);
+/* ==========================================================================
+   Card da Pergunta
+   ========================================================================== */
+.card-pergunta {
+  background-color: var(--cor-card);
+  border: 2px solid var(--cor-borda);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 8px 20px rgba(251, 111, 146, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-button {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    border: none;
-    border-radius: 15px;
-    padding: 15px;
-    transition: background-color 0.3s;
+.card-pergunta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(251, 111, 146, 0.18);
 }
 
-button:hover{
-    background-color: var(--cor-destaque);
-    color: var(--cor-principal);
+.enunciado {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--cor-texto-principal);
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Botões de Alternativa
+   ========================================================================== */
+.container-alternativas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.botao-alternativa {
+  background-color: var(--cor-botao);
+  color: var(--cor-botao-texto);
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.botao-alternativa:hover {
+  background-color: var(--cor-botao-hover);
+  color: #ffffff;
+  transform: scale(1.01);
+}
+
+.botao-alternativa:active {
+  transform: scale(0.99);
+}
+
+/* ==========================================================================
+   Caixa de Afirmação / Resultado
+   ========================================================================== */
+.afirmacao {
+  margin-top: 16px;
+  padding: 16px;
+  background-color: var(--cor-fundo);
+  border-left: 4px solid var(--cor-destaque);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--cor-texto-suave);
+  line-height: 1.5;
 }
